@@ -1,0 +1,145 @@
+.gradient-custom-2 {
+  /* fallback for old browsers */
+  background: #7e40f6;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(
+    to right,
+    rgba(126, 64, 246, 1),
+    rgba(80, 139, 252, 1)
+  );
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(
+    to right,
+    rgba(126, 64, 246, 1),
+    rgba(80, 139, 252, 1)
+  );
+}
+
+.mask-custom {
+  background: rgba(24, 24, 16, 0.2);
+  border-radius: 2em;
+  backdrop-filter: blur(25px);
+  border: 2px solid rgba(255, 255, 255, 0.05);
+  background-clip: padding-box;
+  box-shadow: 10px 10px 10px rgba(46, 54, 68, 0.03);
+}
+
+.container {
+    max-width: 1580px;
+}
+
+.flex-center {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.main-icon {
+    width: 4.8rem;
+    height: 4.5rem;
+}
+
+.w-30p {
+    width: 30%;
+}
+
+.w-70p {
+    width: 70%;
+}
+
+.w-100p {
+    width: 100%;
+}
+
+.custom {
+    display: flex;
+    margin: 0px;
+    width: 100%;
+}
+
+.form-class {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+.input-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px;
+}
+
+.title {
+    border-radius: 1.5rem 1.5rem 0 0;
+    border: none;
+    padding: 1.2rem;
+    font-size: large;
+    margin-bottom: 5px;
+}
+
+.content {
+    font-size: large;
+    margin-bottom: 5px;
+    padding: 1.2rem;
+}
+
+.dropdown {
+    display: grid;
+    grid-template-columns: 20% 1fr;
+    font-weight: bold;
+    color: white;
+}
+
+.submit {
+    height: 7rem;
+    margin: 10px;
+    border: none;
+    border-radius: 1.5rem;
+    font-size: x-large;
+    background-color: white;
+}
+
+/* for table headers */
+.tasklist th:nth-child(1) {
+    flex-basis: 20%;
+}
+
+.tasklist th:nth-child(2) {
+    flex-basis: 20%;
+}
+
+.tasklist th:nth-child(3) {
+    flex-basis: 40%;
+}
+
+.tasklist th:nth-child(4) {
+    flex-basis: 10%;
+}
+
+.tasklist th:nth-child(5) {
+    flex-basis: 10%;
+}
+/* for table rows */
+.taskrow th:nth-child(1) {
+    flex-basis: 20%;
+}
+
+.taskrow td:nth-child(2) {
+    flex-basis: 20%;
+}
+
+.taskrow td:nth-child(3) {
+    flex-basis: 40%;
+}
+
+.taskrow td:nth-child(4) {
+    flex-basis: 10%;
+}
+
+.taskrow td:nth-child(5) {
+    flex-basis: 10%;
+}

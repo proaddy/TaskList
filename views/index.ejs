@@ -1,0 +1,109 @@
+<%- include("partials/header.ejs") %>
+
+<section class="vh-100 gradient-custom-2">
+  <div class="container py-5 h-100 custom">
+    <!-- Input area -->
+    <div class="card mask-custom h-100 w-30p">
+      <form action="/submit" method="POST" class="form-class">
+        <div class="input-area">
+          <input type="text" name="title" placeholder="Enter Title" class="title"/>
+          <textarea
+            name="content"
+            id="task"
+            cols="30"
+            rows="10"
+            placeholder="Enter Task Content"
+            class="content"
+          ></textarea>
+          <div class="dropdown">
+              <label for="priority">Select Priority</label>
+              <select name="priority" id="priority">
+                <option value="">Select...</option>
+                <option value="high">High Priority</option>
+                <option value="middle">Middle Priority</option>
+                <option value="low">Low Priority</option>
+              </select>
+          </div>
+        </div>
+        <input type="submit" value="submit" class="submit"/>
+      </form>
+    </div>
+
+    <!-- Display area -->
+    <div class="row d-flex justify-content-center w-70p h-100">
+      <div class="col-md-12 col-xl-10 w-100p">
+        <div class="card mask-custom">
+          <div class="card-body p-4 text-white">
+            <div class="text-center flex-center">
+              <img
+                src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-todo-list/check1.webp"
+                alt="Check"
+                width="60"
+                class="main-icon"
+              />
+              <h2 class="my-4">Task List</h2>
+            </div>
+
+            <table class="table text-white mb-0">
+              <thead>
+                <tr class="tasklist d-flex">
+                  <th scope="col">Created By</th>
+                  <th scope="col">Title</th>
+                  <th scope="col">Task</th>
+                  <th scope="col">Priority</th>
+                  <th scope="col">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <%# Attach list in here and then loop for each element %>
+                <% if (locals.data) { %>
+                  <% let nameList = ["", "Emma Johnson", "Olivia Smith", "Liam Wilson", "Ava Davis", "Sophia Brown", "Noah Anderson"] %>
+                  <% data.forEach((e) => { %>
+                    <% avatar = Math.floor(Math.random()*6+1) %>
+                    <tr class="fw-normal d-flex taskrow">
+                      <th>
+                        <img
+                          src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava<%= avatar %>-bg.webp"
+                          alt="avatar <%= avatar %>"
+                          style="width: 45px; height: auto"
+                        />
+                        <span class="ms-2"><%= nameList[avatar] %></span>
+                      </th>
+                      <td class="align-middle">
+                        <span><%= e.title %></span>
+                      </td>
+                      <td class="align-middle">
+                        <span><%= e.content %></span>
+                      </td>
+                      <td class="align-middle">
+                        <h6 class="mb-0">
+                            <% if (e.priority === 'high') { %>
+                              <span class="badge bg-danger">High priority</span>
+                            <% } else if (e.priority === 'middle') { %>
+                              <span class="badge bg-warning">Middle priority</span>
+                            <% } else { %>
+                              <span class="badge bg-success">Low priority</span>
+                            <% } %>
+                        </h6>
+                      </td>
+                      <td class="align-middle">
+                        <a href="#!" data-mdb-toggle="tooltip" title="Done"
+                          ><i class="fas fa-pen fa-lg text-success me-3"></i
+                        ></a>
+                        <a href="#!" data-mdb-toggle="tooltip" title="Remove"
+                          ><i class="fas fa-trash-alt fa-lg text-warning"></i
+                        ></a>
+                      </td>
+                    </tr>
+                  <% }); %>
+                <% }  %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include("partials/footer.ejs") %>
